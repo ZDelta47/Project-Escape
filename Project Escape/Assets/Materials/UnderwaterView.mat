@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: UnderwaterView
   m_Shader: {fileID: 4800000, guid: e94a234b5073646ba9bd5b6ff7e4d359, type: 3}
