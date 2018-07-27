@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 4051285312119574}
   - component: {fileID: 114328602228542822}
   - component: {fileID: 114337117225005434}
-  - component: {fileID: 114048903341145920}
   - component: {fileID: 114172705041461032}
   m_Layer: 0
   m_Name: Water
@@ -339,24 +338,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361754182354186}
   m_Mesh: {fileID: 4300002, guid: 681e41ee1260343b395ca58745c94870, type: 3}
---- !u!114 &114048903341145920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1409890892307228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4185bc77c7194462ca3b1097ef4a5de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reflectionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  reflectSkybox: 1
-  clearColor: {r: 1, g: 1, b: 1, a: 1}
-  reflectionSampler: _ReflectionTex
-  clipPlaneOffset: 0.07
 --- !u!114 &114080130049448302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a91e8dd37cdd41efb4859b65aced7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflection: {fileID: 114048903341145920}
+  reflection: {fileID: 0}
   waterBase: {fileID: 114328602228542822}
 --- !u!114 &114172705041461032
 MonoBehaviour:
@@ -418,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a91e8dd37cdd41efb4859b65aced7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflection: {fileID: 114048903341145920}
+  reflection: {fileID: 0}
   waterBase: {fileID: 114328602228542822}
 --- !u!114 &114721632866831384
 MonoBehaviour:
@@ -431,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a91e8dd37cdd41efb4859b65aced7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflection: {fileID: 114048903341145920}
+  reflection: {fileID: 0}
   waterBase: {fileID: 114328602228542822}
 --- !u!114 &114833395564742704
 MonoBehaviour:
@@ -444,5 +425,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a91e8dd37cdd41efb4859b65aced7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflection: {fileID: 114048903341145920}
+  reflection: {fileID: 0}
   waterBase: {fileID: 114328602228542822}

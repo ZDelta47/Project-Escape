@@ -13,14 +13,10 @@ public class UnderWaterEffect : MonoBehaviour {
     float noiseScale;
     float noiseSpeed;
 
-	// Use this for initialization
-	void Awake () 
+    private void OnEnable()
     {
-        //noiseFrequency = underwaterView.GetFloat("_NoiseFrequency");
-        //noiseScale = underwaterView.GetFloat("_NoiseScale");
-        //noiseSpeed = underwaterView.GetFloat("_NoiseSpeed");
-        //Debug.Log(noiseScale + " " + noiseFrequency + " " + noiseSpeed);
-	}
+        underwaterView.SetFloat("_NoiseScale", 0);
+    }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
@@ -40,7 +36,6 @@ public class UnderWaterEffect : MonoBehaviour {
 
     public IEnumerator FadeValue (float currentValue, float targetValue, string propertyName)
     {
-        Debug.Log("Coroutine 'FadeValue' started with a current value of " + currentValue);
 
         float timer = 0.0f;
 
@@ -56,12 +51,7 @@ public class UnderWaterEffect : MonoBehaviour {
             yield return null;
         }
 
-        Debug.Log("Coroutine 'FadeValue' finished with a current value of " + currentValue);
-
     }
 
-    private void OnDisable()
-    {
-        underwaterView.SetFloat("_NoiseScale" , 0);
-    }
+   
 }
