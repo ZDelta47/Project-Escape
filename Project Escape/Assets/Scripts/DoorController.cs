@@ -7,12 +7,15 @@ public class DoorController : MonoBehaviour {
     public GameObject door;
     public Transform open;
     public Transform closed;
+    public AudioClip openingSFX;
 
     public float transitionTime = 3.0f;
 
     public enum DoorState { OPENING, CLOSING };
 
     public DoorState nextAction;
+
+
 
     IEnumerator currentMoveDoorCoroutine;
 
@@ -37,6 +40,7 @@ public class DoorController : MonoBehaviour {
             currentMoveDoorCoroutine = MoveDoor(open.position);
             StartCoroutine(currentMoveDoorCoroutine);
             nextAction = DoorState.CLOSING;
+            SoundManager.instance.PlaySingle(openingSFX);
         }
         // Close Door
         else if (nextAction == DoorState.CLOSING)
@@ -44,6 +48,8 @@ public class DoorController : MonoBehaviour {
             currentMoveDoorCoroutine = MoveDoor(closed.position);
             StartCoroutine(currentMoveDoorCoroutine);
             nextAction = DoorState.OPENING;
+            SoundManager.instance.PlaySingle(openingSFX);
+
         }
 
     }

@@ -13,7 +13,6 @@ public class SwitchController : MonoBehaviour {
         if (collision.gameObject == objectToActivate)
         {
             IsActivated.Invoke();
-            Debug.Log("Switch Activated");
         }
     }
 
@@ -22,7 +21,6 @@ public class SwitchController : MonoBehaviour {
         if (collision.gameObject == objectToActivate)
         {
             IsActivated.Invoke();
-            Debug.Log("Switch Deactivated");
         }
     }
 }

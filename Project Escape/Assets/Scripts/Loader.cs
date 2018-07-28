@@ -8,6 +8,7 @@ public class Loader : MonoBehaviour {
     public GameObject levelManager;
     public GameObject soundManager;
     public GameObject uiManager;
+    public GameObject garbageCollector;
 
     private void Awake()
     {
@@ -29,6 +30,11 @@ public class Loader : MonoBehaviour {
         if (UIManager.instance == null)
         {
             Instantiate(uiManager);
+        }
+
+        if (GarbageCollector.instance == null)
+        {
+            Instantiate(garbageCollector);
         }
     }
 }
