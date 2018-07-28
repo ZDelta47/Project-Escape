@@ -21,6 +21,11 @@ public class LevelManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    public Scene GetActiveScene()
+    {
+       return SceneManager.GetActiveScene();
+    }
+
     public void ChangeScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -29,5 +34,11 @@ public class LevelManager : MonoBehaviour {
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

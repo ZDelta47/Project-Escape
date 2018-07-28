@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GarbageCollector : MonoBehaviour {
 
-    public static GameManager instance = null;
+    public static GarbageCollector instance;
 
     public void Awake()
     {
@@ -20,10 +20,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }

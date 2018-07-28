@@ -51,6 +51,7 @@ public class GrabObjects : MonoBehaviour {
 
     void ActivateInteractable (RaycastHit hit)
     {
+
         currentInteractable = hit.transform.gameObject;
         currentInteractable.GetComponent<CheckCollision>().isUsed = true;
         Rigidbody rb = currentInteractable.GetComponent<Rigidbody>();

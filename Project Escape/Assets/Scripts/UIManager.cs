@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour {
     public GameObject pauseMenu;
 
 
-    public bool isPaused;
+    bool isPaused;
 
 
     public void Awake()
@@ -27,41 +27,36 @@ public class UIManager : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && LevelManager.instance.GetActiveScene().name != "MainMenu" && LevelManager.instance.GetActiveScene().name != "Credits")
         {
-            isPaused = !isPaused;
-
-        }
-
-        if (isPaused)
-        {
-            ActivatePauseMenu();
-
-            if (Input.GetKeyDown(KeyCode.R))
+            if (isPaused)
             {
-                LevelManager.instance.RestartScene();
                 DeactivatePauseMenu();
-                isPaused = false;
             }
-        }
-        else
-        {
-            DeactivatePauseMenu();
+            else
+            {
+                ActivatePauseMenu();
+            }
+
         }
 
     }
 
-    void ActivatePauseMenu()
+    public void ActivatePauseMenu()
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
+        isPaused = true;
 
     }
 
-    void DeactivatePauseMenu()
+    public void DeactivatePauseMenu()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        isPaused = false;
 
     }
+
+   
 }

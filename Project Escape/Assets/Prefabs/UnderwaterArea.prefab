@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4766714714189502}
   - component: {fileID: 114648339877901412}
   - component: {fileID: 65946708522996078}
+  - component: {fileID: 82011803870456912}
   m_Layer: 0
   m_Name: UnderwaterArea
   m_TagString: Untagged
@@ -52,7 +53,102 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.873127, y: 5.614867, z: 19.605549}
-  m_Center: {x: -0.03726101, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82011803870456912
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776268002367760}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114648339877901412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,16 +160,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f492e0544dbb2f34b86e86533b0b52ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterSplashFX: {fileID: 0}
-  waterSplashSFX:
-  - {fileID: 8300000, guid: 41555fa55e3194e42aa80a9c067475ef, type: 3}
-  - {fileID: 8300000, guid: 3b82dd8363b11284eb0b293f32a49aff, type: 3}
-  - {fileID: 8300000, guid: 9c0a40211a7e8ae4b8c043f635508da4, type: 3}
+  waterSplashFX: {fileID: 104794, guid: 1e08f2e3184ef9940b1e8590ab642404, type: 2}
+  waterSplashInSFX:
+  - {fileID: 8300000, guid: 1e73c57e9c3e7934b9d76922dcfe162e, type: 3}
+  - {fileID: 8300000, guid: 055ed02fabc677841ba18e29594e1f2b, type: 3}
+  - {fileID: 8300000, guid: a5e4bb93e7935534ebce440099e9fd00, type: 3}
+  waterSplashOutSFX:
+  - {fileID: 8300000, guid: fb8bfbfd486cfe743bd6dae22b059ef6, type: 3}
+  - {fileID: 8300000, guid: 0c67cb64d75d690428e694a2264f0747, type: 3}
+  - {fileID: 8300000, guid: ed18725224d906d4295e602be6fb2ed0, type: 3}
   PlayerIsUnderwater:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114339074886887402, guid: 507df06cea55cd44c92727c99be9e28d,
-          type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: SwitchUnderwaterView
         m_Mode: 4
         m_Arguments:
@@ -89,8 +188,7 @@ MonoBehaviour:
   PlayerIsAfloat:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114339074886887402, guid: 507df06cea55cd44c92727c99be9e28d,
-          type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: SwitchUnderwaterView
         m_Mode: 4
         m_Arguments:
@@ -103,3 +201,4 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  waterSurfaceHeight: 0

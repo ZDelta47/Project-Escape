@@ -10,19 +10,15 @@ public class CheckCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true;
+        if (!other.transform.CompareTag("Water"))
+        {
+            isColliding = true;
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         isColliding = false;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GetComponent<Rigidbody>().isKinematic = false;
-        }
     }
 }
